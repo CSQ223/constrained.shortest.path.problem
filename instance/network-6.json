@@ -1,0 +1,66 @@
+{
+    "network": "network-6",
+    "time-limit": 15,
+    "edge-list": [
+        {
+            "source_id": "1",
+            "target_id": "2",
+            "distance": 1,
+            "travel_time": 10
+        },
+        {
+            "source_id": "1",
+            "target_id": "3",
+            "distance": 10,
+            "travel_time": 3
+        },
+        {
+            "source_id": "2",
+            "target_id": "4",
+            "distance": 1,
+            "travel_time": 1
+        },
+        {
+            "source_id": "2",
+            "target_id": "5",
+            "distance": 2,
+            "travel_time": 3
+        },
+        {
+            "source_id": "3",
+            "target_id": "2",
+            "distance": 1,
+            "travel_time": 2
+        },
+        {
+            "source_id": "3",
+            "target_id": "4",
+            "distance": 2,
+            "travel_time": 3
+        },
+        {
+            "source_id": "3",
+            "target_id": "5",
+            "distance": 12,
+            "travel_time": 3
+        },
+        {
+            "source_id": "4",
+            "target_id": "5",
+            "distance": 10,
+            "travel_time": 1
+        },
+        {
+            "source_id": "4",
+            "target_id": "6",
+            "distance": 1,
+            "travel_time": 7
+        },
+        {
+            "source_id": "5",
+            "target_id": "6",
+            "distance": 2,
+            "travel_time": 2
+        }
+    ]
+}
