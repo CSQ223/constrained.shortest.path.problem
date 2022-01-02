@@ -19,7 +19,7 @@ struct Label_
 };
 
 
-bool operator < (const Label_& lhs, const Label_& rhs)
+static bool operator < (const Label_& lhs, const Label_& rhs)
 {
     return (rhs.cost -lhs.cost) <= Network::EPS;
 }

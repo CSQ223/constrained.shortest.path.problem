@@ -38,6 +38,14 @@ public:
         double coeff_dist = 1
     ) const;
 
+
+    std::pair<std::list<std::string>, double> 
+    LabelSetting(
+        const std::string& source, 
+        const std::string& target
+    ) const;
+
+
     std::pair<std::list<std::string>, double> 
     LagrangianRelaxation(
         const std::string& source, 

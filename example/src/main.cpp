@@ -14,11 +14,14 @@ main(int argc, char* args[])
     {
         auto network = network::Network::Factory(args[1]);
         network->BuildAdjacenciesList();
-        auto [path, min_cost] = network->LagrangianRelaxation(args[2], args[3]);
-        fmt::print("path = {}, cost = {}\n", path, min_cost);
 
-        std::tie(path, min_cost) = network->Dijkstra(args[2], args[3], 1.5);
-        fmt::print("path = {}, cost = {}\n", path, min_cost);
+        // Lagrangian Relaxation
+        auto [path, min_cost] = network->LagrangianRelaxation(args[2], args[3]);
+        fmt::print("Lagrangian Relaxation: path = {}, cost = {}\n", path, min_cost);
+
+        // Label Setting
+        std::tie(path, min_cost) = network->LabelSetting(args[2], args[3]);
+        fmt::print("Label Setting: path = {}, cost = {}\n", path, min_cost);
     }
 
     return 0;
