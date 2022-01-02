@@ -50,7 +50,7 @@ Network::LagrangianRelaxation(
 
     fmt::print("iter UB      LB    lambda  delta best_path\n");
 
-    for (int iter = 1; delta >= 10E-6 && iter <= 100 ; iter++)
+    for (int iter = 1; delta >= EPS && (upper_bound-lower_bound) / upper_bound >= EPS; iter++)
     {
         auto [path, cost] = Dijkstra(source, target, lambda);
         double time = GetCostOfPath(path, 0, 1);
@@ -68,7 +68,7 @@ Network::LagrangianRelaxation(
                 upper_bound = GetCostOfPath(best_path, 1, 0);
             }
         }
-        delta = ((time - time_limit_)*(time - time_limit_)) / (upper_bound - lower_bound);
+        delta = 1.0 / (iter+1);
         lambda = std::max(0.0, lambda + delta*(time - time_limit_));
         fmt::print("{0:4d} {1:>6.3f} {2:>6.3f} {3:>6.3f} {4:>6.3f} {5}\n", iter, upper_bound, lower_bound, lambda, delta, best_path);
     }

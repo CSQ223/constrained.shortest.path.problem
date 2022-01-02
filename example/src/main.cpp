@@ -16,6 +16,9 @@ main(int argc, char* args[])
         network->BuildAdjacenciesList();
         auto [path, min_cost] = network->LagrangianRelaxation(args[2], args[3]);
         fmt::print("path = {}, cost = {}\n", path, min_cost);
+
+        std::tie(path, min_cost) = network->Dijkstra(args[2], args[3], 1.5);
+        fmt::print("path = {}, cost = {}\n", path, min_cost);
     }
 
     return 0;
